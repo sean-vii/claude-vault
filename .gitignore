@@ -6,3 +6,10 @@
 .DS_Store
 Thumbs.db
 *.tmp.*
+
+# A Dropbox or sync-client conflict copy of Obsidian's own settings
+.obsidian/*conflicted copy*.json
+
+# Per-machine agent settings: the second working directory (the code checkout) is
+# declared here, never in anything this repository tracks (CONVENTIONS §10.1).
+.claude/settings.local.json

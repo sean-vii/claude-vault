@@ -11,11 +11,18 @@ related: ["[[Other Note]]"]
 
 <!--
   A LIVING NOTE is edited in place, forever. It describes the system AS IT IS
-  NOW, and derives its authority from the ADRs beneath it (CONVENTIONS §2).
+  NOW, and is a source of truth as authoritative as any ADR (CONVENTIONS §2).
 
   - To change it: edit it and bump `updated:`. Never recreate it.
-  - Link the ADR for every non-obvious choice it describes — the why lives
-    there, the what lives here.
+  - Most facts here have no ADR. Link one only where a load-bearing decision
+    stands behind the fact (CONVENTIONS §3); otherwise write the reasoning
+    here, beside the fact, where it matters.
+  - Every rule is followed directly by its Mechanism box (CONVENTIONS §9): the
+    software, the named job, table or module, and how it carries the rule out.
+    The box is design, never a report on the code — no code, no column list, no
+    file path, and nothing about whether it is built.
+  - Say what the system is; never what it lacks. A gap worth keeping goes to the
+    tracking project as a deferred item (CONVENTIONS §6.1, §10).
   - If it contradicts an accepted ADR, that is a defect: either this note is
     stale, or a decision was made without an ADR. Surface it; do not pick a
     winner silently.
@@ -27,17 +34,15 @@ related: ["[[Other Note]]"]
 
 What this is, in plain language, before any detail.
 
-## Responsibilities
+## The rules
 
-Inputs, outputs, and what this owns. Be explicit — Claude treats unstated things as unknown, not implied.
+**Each rule is one bold sentence in plain words.** Its reasoning sits beside it where the reasoning matters. Diagrams are Mermaid in fenced blocks ([[CONVENTIONS]] §4), never images.
 
-## Detail
-
-The substance. Diagrams are Mermaid in fenced blocks ([[CONVENTIONS]] §4), never images.
-
-## Assumptions
-
-What this takes for granted, and what breaks if any of it is wrong.
+> [!abstract] Mechanism
+> How the rule above is carried out: the software, the named job, table or
+> module, the steps in order, what is written together and what follows, and
+> what happens on failure. Detail an agent would otherwise have to guess
+> belongs here.
 
 ## Non-goals
 
@@ -45,4 +50,4 @@ What this deliberately does not do. As load-bearing as the goals.
 
 ## Decisions
 
-The ADRs this note implements. `[[ADR-NNNN - title]]`
+The load-bearing ADRs this note depends on, if any. `[[ADR-NNNN - title]]`

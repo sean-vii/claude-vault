@@ -1,0 +1,4 @@
+# Blank issues are off on purpose: this repository takes only the two kinds its
+# templates define — a conflict and a deferred choice (CONVENTIONS §10). Build work
+# is an issue in the code repository, with a link to the rule here that governs it.
+blank_issues_enabled: false

@@ -1,0 +1,16 @@
+{
+  "$comment": "Which build this vault drives (CONVENTIONS §10). Every skill, the main-branch hook and /sync's board review read these values from here and nowhere else. _meta/check-vault.mjs check 15 fails while any ⟨…⟩ remains. Keys starting with $ are notes, not settings.",
+  "vaultRepo": "⟨owner/name of this repository on GitHub⟩",
+  "codeRepo": "⟨owner/name of the code repository on GitHub⟩",
+  "board": "⟨title of the GitHub Project that tracks the build⟩",
+  "$deployedToProduction": "false until the product is first deployed to production. While false, CONVENTIONS §10 rule 5's suspension holds: an agent working an item marked Agent opens conflicts, deferrals and codebase problems itself. A person sets it to true on the day of that deployment.",
+  "deployedToProduction": false,
+  "$handoffDir": "Where a milestone manager writes its handoff after ten issues (CONVENTIONS §10.1). Outside both repositories; ~ is the user's home folder.",
+  "handoffDir": "~/.vault-handoff",
+  "gate": {
+    "$affected": "One command, run in the code repository, that runs the build and its guards, the lint, the timing ceilings and every test a change can reach. The parent branch is passed as its last argument (CONVENTIONS §10.3 standard 5).",
+    "affected": "⟨command for an issue's final round⟩",
+    "$phase": "Every command of the whole gate, in the order they run (CONVENTIONS §10.3 standard 5). The vault guard is added by /verify itself.",
+    "phase": ["⟨each command of the whole gate, in order⟩"]
+  }
+}
